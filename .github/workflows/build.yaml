@@ -112,7 +112,7 @@ jobs:
             cd ~/public_html/sayhellotech
             # SPanel typically uses PM2 or systemd for Node.js apps
             # Option 1: If using PM2
-            pm2 restart sayhellotech
+            pm2 restart sayhellotech.com/
             # Option 2: If using systemd
             # systemctl restart sayhellotech
             # Option 3: Touch restart file if using Passenger
