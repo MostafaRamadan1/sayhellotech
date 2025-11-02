@@ -1,4 +1,4 @@
-name: Deploy to cPanel via FTP
+name: Deploy to SPanel via FTP
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'  # Match your cPanel Node.js version
+          node-version: '20'  # Match your SPanel Node.js version
           cache: 'npm'
 
       - name: Install dependencies
@@ -30,30 +30,31 @@ jobs:
 
       - name: Create deployment package
         run: |
-          # Remove development dependencies and files
-          rm -rf node_modules
-          npm ci --production
-          
-          # Create a clean deployment directory
+          # Build is already done with all dependencies
+          # Now create deployment directory
           mkdir deploy
           
           # Copy necessary files
           cp -r .next deploy/
           cp -r public deploy/
-          cp -r node_modules deploy/
           cp package.json deploy/
           cp package-lock.json deploy/
           cp next.config.js deploy/ 2>/dev/null || :
           cp server.js deploy/ 2>/dev/null || :
+          
+          # Install only production dependencies in deploy folder
+          cd deploy
+          npm ci --production --ignore-scripts
+          cd ..
 
-      - name: Deploy to cPanel via FTP
+      - name: Deploy to SPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./deploy/
-          server-dir: /public_html/sayhellotech/  # Adjust path
+          server-dir: /public_html/sayhellotech/
           dangerous-clean-slate: false  # Set to true to delete all files first
           exclude: |
             **/.git*
@@ -71,4 +72,10 @@ jobs:
           port: ${{ secrets.SSH_PORT || 22 }}
           script: |
             cd ~/public_html/sayhellotech
+            # SPanel typically uses PM2 or systemd for Node.js apps
+            # Option 1: If using PM2
             pm2 restart sayhellotech
+            # Option 2: If using systemd
+            # systemctl restart sayhellotech
+            # Option 3: Touch restart file if using Passenger
+            # touch tmp/restart.txt
