@@ -46,24 +46,62 @@ jobs:
           cd deploy
           npm ci --production --ignore-scripts
           cd ..
+          
+          # Create zip file for faster transfer
+          echo "Creating ZIP archive..."
+          cd deploy
+          zip -r ../deploy.zip . -q
+          cd ..
+          
+          # Show ZIP size
+          echo "ZIP file created:"
+          ls -lh deploy.zip
+          du -h deploy.zip
 
-      - name: Deploy to SPanel via FTP
+      - name: Upload ZIP to server via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./deploy/
+          local-dir: ./
           server-dir: /public_html/sayhellotech/
-          dangerous-clean-slate: false  # Set to true to delete all files first
+          dangerous-clean-slate: false
           exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**/.bin/**
-            .env
-            .env.local
+            **/*
+            !deploy.zip
 
-      - name: Restart Node.js App via SSH (Optional)
+      - name: Extract ZIP and cleanup on server via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            cd ~/public_html/sayhellotech
+            
+            # Backup current deployment (optional)
+            if [ -d ".next" ]; then
+              echo "Creating backup..."
+              tar -czf backup-$(date +%Y%m%d-%H%M%S).tar.gz .next package.json server.js 2>/dev/null || true
+              # Keep only last 3 backups
+              ls -t backup-*.tar.gz | tail -n +4 | xargs rm -f 2>/dev/null || true
+            fi
+            
+            # Extract the zip file
+            echo "Extracting deployment..."
+            unzip -o deploy.zip
+            
+            # Remove the zip file
+            rm deploy.zip
+            
+            # Set proper permissions
+            chmod -R 755 .
+            
+            echo "Deployment extracted successfully!"
+
+      - name: Restart Node.js App via SSH
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.SSH_HOST }}
