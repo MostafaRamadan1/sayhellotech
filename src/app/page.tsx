@@ -16,7 +16,7 @@ import { Fragment } from 'react';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'Crypto - NextSaaS',
+  title: '👋 SayHelloTech',
 };
 
 const Homepage01 = () => {

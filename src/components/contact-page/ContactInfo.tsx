@@ -1,3 +1,5 @@
+'use client';
+
 import gradient17 from '@public/images/gradient/gradient-17.png';
 import gradient22 from '@public/images/gradient/gradient-22.png';
 import gradient6 from '@public/images/gradient/gradient-6.png';
@@ -6,40 +8,95 @@ import mailIcon from '@public/images/icons/mail-open.svg';
 import phoneIcon from '@public/images/icons/phone-right.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import RevealAnimation from '../animation/RevealAnimation';
 
 const contactInfoItems = [
-  {
-    id: 1,
-    icon: homeIcon,
-    title: 'Our Address',
-    content: '2464 Royal Ln. Mesa, New Jersey 45463',
-    gradient: gradient22,
-    gradientClass: 'top-[-187px] left-[174px] -rotate-[78deg]',
-  },
-  {
-    id: 2,
-    icon: mailIcon,
-    title: 'Email Us',
-    content: 'hello@nextsaaS.com',
-    link: 'mailto:hello@nextsaaS.com',
-    gradient: gradient17,
-    gradientClass: 'top-[-206px] left-[-36px] rotate-[62deg]',
-  },
-  {
-    id: 3,
-    icon: phoneIcon,
-    title: 'Call Us',
-    content: '+391 (0)35 2568 4593',
-    link: 'tel:+391035256845933',
-    gradient: gradient6,
-    gradientClass: 'top-[-184px] left-[-185px]',
-  },
+    {
+        id: 1,
+        icon: homeIcon,
+        title: 'Our Address',
+        content: '5 Degla Compound, next to Technology Park, Maadi, Cairo 11728, Egypt',
+        gradient: gradient22,
+        gradientClass: 'top-[-187px] left-[174px] -rotate-[78deg]',
+    },
+    {
+        id: 2,
+        icon: mailIcon,
+        title: 'Email Us',
+        content: 'hello@sayhellotech.com',
+        link: 'mailto:hello@sayhellotech.com',
+        gradient: gradient17,
+        gradientClass: 'top-[-206px] left-[-36px] rotate-[62deg]',
+    },
+    {
+        id: 3,
+        icon: phoneIcon,
+        title: 'Call Us',
+        content: '+2 (01)14 1325 993',
+        link: 'tel:+201141325993',
+        gradient: gradient6,
+        gradientClass: 'top-[-184px] left-[-185px]',
+    },
 ];
 
 const ContactInfo = () => {
-  return (
-    <section className="pt-7 pb-14 md:pb-16 lg:pb-20 xl:pb-[100px]" aria-label="Contact Information and Form">
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<{
+        type: 'success' | 'error' | null;
+        message: string;
+    }>({ type: null, message: '' });
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus({ type: null, message: '' });
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            fullname: formData.get('fullname') as string,
+            email: formData.get('email') as string,
+            number: formData.get('number') as string,
+            subject: formData.get('subject') as string,
+            message: formData.get('message') as string,
+        };
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setSubmitStatus({
+                    type: 'success',
+                    message: 'Thank you! Your message has been sent successfully.',
+                });
+                // Reset form
+                e.currentTarget.reset();
+            } else {
+                setSubmitStatus({
+                    type: 'error',
+                    message: result.error || 'Failed to send message. Please try again.',
+                });
+            }
+        } catch (error) {
+            setSubmitStatus({
+                type: 'error',
+                message: 'An error occurred. Please try again later.',
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
+
+    return (
+    <section className="pt-50 pb-14 md:pb-16 lg:pb-20 xl:pb-[100px]" aria-label="Contact Information and Form">
       <div className="main-container">
         <div className="space-y-[70px]">
           {/* heading  */}
@@ -83,10 +140,20 @@ const ContactInfo = () => {
               ))}
             </div>
             {/* contact form  */}
-            <RevealAnimation
-              delay={0.3}
-              className="max-w-[847px] w-full mx-auto bg-white dark:bg-background-6 rounded-4xl p-6 md:p-8 lg:p-11">
-              <form action="#" method="POST" className="space-y-8">
+            <RevealAnimation delay={0.3}>
+              <section className="max-w-[847px] w-full mx-auto bg-white dark:bg-background-6 rounded-4xl p-6 md:p-8 lg:p-11">
+                {/* Status messages */}
+                {submitStatus.type && (
+                  <div
+                    className={`mb-6 p-4 rounded-lg ${
+                      submitStatus.type === 'success'
+                        ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800'
+                        : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-300 border border-red-200 dark:border-red-800'
+                    }`}>
+                    <p className="text-tagline-2">{submitStatus.message}</p>
+                  </div>
+                )}
+                <form onSubmit={handleSubmit} className="space-y-8">
                 {/* name and phone number  */}
                 <div className="flex items-center flex-col md:flex-row gap-8 justify-between">
                   {/*  name */}
@@ -94,7 +161,7 @@ const ContactInfo = () => {
                     <label
                       htmlFor="fullname"
                       className="block text-tagline-2 text-secondary dark:text-accent font-medium">
-                      Your name
+                      Your name*
                     </label>
                     <input
                       type="text"
@@ -127,7 +194,7 @@ const ContactInfo = () => {
                 {/* email  */}
                 <div className="space-y-2">
                   <label htmlFor="email" className="block text-tagline-2 text-secondary dark:text-accent font-medium">
-                    Email address
+                    Email address*
                   </label>
                   <input
                     type="email"
@@ -142,7 +209,7 @@ const ContactInfo = () => {
                 {/* subject  */}
                 <div className="space-y-2">
                   <label htmlFor="subject" className="block text-tagline-2 text-secondary dark:text-accent font-medium">
-                    Subject
+                    Subject*
                   </label>
                   <input
                     type="text"
@@ -156,7 +223,7 @@ const ContactInfo = () => {
                 {/* message */}
                 <div className="space-y-2">
                   <label htmlFor="message" className="block text-tagline-2 text-secondary dark:text-accent font-medium">
-                    Write message
+                    Write message*
                   </label>
                   <textarea
                     id="message"
@@ -187,10 +254,12 @@ const ContactInfo = () => {
                 {/* submit button */}
                 <button
                   type="submit"
-                  className="btn btn-md btn-secondary w-full hover:btn-primary dark:btn-accent before:content-none first-letter:uppercase">
-                  Submit
+                  disabled={isSubmitting}
+                  className="btn btn-md btn-secondary w-full hover:btn-primary dark:btn-accent before:content-none first-letter:uppercase disabled:opacity-50 disabled:cursor-not-allowed">
+                  {isSubmitting ? 'Sending...' : 'Submit'}
                 </button>
               </form>
+              </section>
             </RevealAnimation>
           </div>
         </div>
