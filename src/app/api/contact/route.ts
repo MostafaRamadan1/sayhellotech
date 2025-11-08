@@ -6,7 +6,6 @@ const SMTP_HOST = 'satya.vivawebhost.com';
 const SMTP_PORT = 465;
 const SMTP_USER = 'hello@sayhellotech.com';
 const SMTP_PASSWORD = 'UKjs30TlW3hq4';
-const SMTP_FROM = 'support@sayhellotech.com';
 const RECIPIENT_EMAIL = 'hello@sayhellotech.com';
 
 
@@ -178,7 +177,7 @@ export async function POST(request: NextRequest) {
     // Email content
     // Use user's email as "from" address (may cause issues with some SMTP servers)
     const mailOptions = {
-      from: email, // User's email from the form
+      from: SMTP_USER, // User's email from the form
       replyTo: email, // This allows replies to go to the user's email
       to: RECIPIENT_EMAIL,
       subject: `Customer request : ${subject}`,
