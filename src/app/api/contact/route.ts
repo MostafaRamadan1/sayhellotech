@@ -1,13 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// SMTP Configuration Constants
+const SMTP_HOST = 'satya.vivawebhost.com';
+const SMTP_PORT = 465;
+const SMTP_USER = 'hello@sayhellotech.com';
+const SMTP_PASSWORD = 'UKjs30TlW3hq4';
+const SMTP_FROM = 'support@sayhellotech.com';
+const RECIPIENT_EMAIL = 'hello@sayhellotech.com';
+
+
 // Helper function to create transporter
 function createTransporter() {
-  const smtpPort = parseInt(process.env.SMTP_PORT || '587');
+  const smtpPort = parseInt(String(SMTP_PORT));
   const isSecurePort = smtpPort === 465;
 
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
+    host: SMTP_HOST,
     port: smtpPort,
     secure: isSecurePort, // true for 465 (SSL), false for 587 (TLS)
     requireTLS: !isSecurePort, // Require TLS for port 587
@@ -15,8 +24,8 @@ function createTransporter() {
     greetingTimeout: 10000, // 10 seconds timeout
     socketTimeout: 10000, // 10 seconds timeout
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASSWORD,
+      user: SMTP_USER,
+      pass: SMTP_PASSWORD,
     },
 
     // Ignore certificate errors (only for development/testing)
@@ -31,23 +40,23 @@ export async function GET() {
   try {
     console.log('=== Testing SMTP Connection ===');
     
-    // Validate environment variables
-    if (!process.env.SMTP_HOST || !process.env.SMTP_PORT || !process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+    // Validate SMTP configuration
+    if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
       console.error('❌ Missing SMTP configuration:', {
-        SMTP_HOST: !!process.env.SMTP_HOST,
-        SMTP_PORT: !!process.env.SMTP_PORT,
-        SMTP_USER: !!process.env.SMTP_USER,
-        SMTP_PASSWORD: !!process.env.SMTP_PASSWORD,
+        SMTP_HOST: !!SMTP_HOST,
+        SMTP_PORT: !!SMTP_PORT,
+        SMTP_USER: !!SMTP_USER,
+        SMTP_PASSWORD: !!SMTP_PASSWORD,
       });
       return NextResponse.json(
         { 
           success: false,
           error: 'Missing SMTP configuration',
           details: {
-            SMTP_HOST: !!process.env.SMTP_HOST,
-            SMTP_PORT: !!process.env.SMTP_PORT,
-            SMTP_USER: !!process.env.SMTP_USER,
-            SMTP_PASSWORD: !!process.env.SMTP_PASSWORD,
+            SMTP_HOST: !!SMTP_HOST,
+            SMTP_PORT: !!SMTP_PORT,
+            SMTP_USER: !!SMTP_USER,
+            SMTP_PASSWORD: !!SMTP_PASSWORD,
           }
         },
         { status: 400 }
@@ -55,10 +64,10 @@ export async function GET() {
     }
 
     console.log('SMTP Configuration:', {
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      user: process.env.SMTP_USER,
-      secure: parseInt(process.env.SMTP_PORT || '587') === 465,
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      user: SMTP_USER,
+      secure: parseInt(String(SMTP_PORT)) === 465,
     });
 
     const transporter = createTransporter();
@@ -76,10 +85,10 @@ export async function GET() {
         success: true,
         message: 'SMTP connection test successful!',
         config: {
-          host: process.env.SMTP_HOST,
-          port: process.env.SMTP_PORT,
-          user: process.env.SMTP_USER,
-          secure: parseInt(process.env.SMTP_PORT || '587') === 465,
+          host: SMTP_HOST,
+          port: SMTP_PORT,
+          user: SMTP_USER,
+          secure: parseInt(String(SMTP_PORT)) === 465,
         }
       },
       { status: 200 }
@@ -149,13 +158,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate environment variables
-    if (!process.env.SMTP_HOST || !process.env.SMTP_PORT || !process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+    // Validate SMTP configuration
+    if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
       console.error('Missing SMTP configuration:', {
-        SMTP_HOST: !!process.env.SMTP_HOST,
-        SMTP_PORT: !!process.env.SMTP_PORT,
-        SMTP_USER: !!process.env.SMTP_USER,
-        SMTP_PASSWORD: !!process.env.SMTP_PASSWORD,
+        SMTP_HOST: !!SMTP_HOST,
+        SMTP_PORT: !!SMTP_PORT,
+        SMTP_USER: !!SMTP_USER,
+        SMTP_PASSWORD: !!SMTP_PASSWORD,
       });
       return NextResponse.json(
         { error: 'Email service is not configured. Please contact the administrator.' },
@@ -169,9 +178,9 @@ export async function POST(request: NextRequest) {
     // Email content
     // Use authenticated SMTP user as "from" address, but include user's email in reply-to
     const mailOptions = {
-      from: process.env.SMTP_FROM || process.env.SMTP_USER,
+      from: SMTP_FROM || SMTP_USER,
       replyTo: email, // This allows replies to go to the user's email
-      to: 'hello@sayhellotech.com',
+      to: RECIPIENT_EMAIL,
       subject: `Contact Form: ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
