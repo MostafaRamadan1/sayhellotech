@@ -137,7 +137,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   try {
-      console.log("Received contact form submission");
+    console.log("Received contact form submission");
     const body = await request.json();
     const { fullname, email, number, subject, message } = body;
 
@@ -178,7 +178,7 @@ export async function POST(request: NextRequest) {
     // Email content
     // Use authenticated SMTP user as "from" address, but include user's email in reply-to
     const mailOptions = {
-      from: SMTP_FROM || SMTP_USER,
+      from: email || SMTP_USER,
       replyTo: email, // This allows replies to go to the user's email
       to: RECIPIENT_EMAIL,
       subject: `Contact Form: ${subject}`,
