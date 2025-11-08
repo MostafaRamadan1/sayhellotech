@@ -137,7 +137,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   try {
-      console.log("Received contact form submission");
+    console.log("Received contact form submission");
     const body = await request.json();
     const { fullname, email, number, subject, message } = body;
 
@@ -176,32 +176,49 @@ export async function POST(request: NextRequest) {
     const transporter = createTransporter();
 
     // Email content
-    // Use authenticated SMTP user as "from" address, but include user's email in reply-to
+    // Use user's email as "from" address (may cause issues with some SMTP servers)
     const mailOptions = {
-      from: SMTP_FROM || SMTP_USER,
+      from: email, // User's email from the form
       replyTo: email, // This allows replies to go to the user's email
       to: RECIPIENT_EMAIL,
-      subject: `Contact Form: ${subject}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${fullname}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${number ? `<p><strong>Phone Number:</strong> ${number}</p>` : ''}
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
-      text: `
-        New Contact Form Submission
+      subject: `Customer request : ${subject}`,
+        html: `
+          <div style="font-family: 'Segoe UI', Roboto, Arial, sans-serif; color: #333; background-color: #f9fafb; padding: 24px;">
+            <div style="max-width: 600px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 24px;">
+              <h2 style="color: #0078ff; margin-bottom: 8px;">👋 New Request from ${fullname}</h2>
+              <p style="font-size: 15px; color: #555;">Someone just said hello on your website — here are the details:</p>
+              <hr style="border: none; border-top: 1px solid #eee; margin: 16px 0;">
+              <p><strong>👤 Name:</strong> ${fullname}</p>
+              <p><strong>✉️ Email:</strong> <a href="mailto:${email}" style="color: #0078ff;">${email}</a></p>
+              ${number ? `<p><strong>📞 Phone:</strong> ${number}</p>` : ''}
+              <p><strong>💡 Subject:</strong> ${subject}</p>
+              <p style="margin-top: 16px;"><strong>🗒️ Message:</strong></p>
+              <div style="background: #f3f4f6; border-radius: 8px; padding: 12px; white-space: pre-line; line-height: 1.5;">
+                ${message.replace(/\n/g, '<br>')}
+              </div>
+              <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;">
+              <p style="font-size: 13px; color: #888;">This message was sent via the <strong>SayHelloTech Contact Form</strong>.  
+              You can reply directly to this email to respond.</p>
+            </div>
+          </div>
+        `,
+        text: `
+        👋 New Request from ${fullname}
+        
+        Someone just said hello on your website!
         
         Name: ${fullname}
         Email: ${email}
-        ${number ? `Phone Number: ${number}` : ''}
+        ${number ? `Phone: ${number}` : ''}
         Subject: ${subject}
         
         Message:
         ${message}
-      `,
+        
+        ---
+        Sent via SayHelloTech Contact Form.
+        You can reply directly to this email to respond.
+        `,
     };
 
     // Send email
