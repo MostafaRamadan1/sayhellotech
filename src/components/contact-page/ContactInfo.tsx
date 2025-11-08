@@ -8,7 +8,7 @@ import mailIcon from '@public/images/icons/mail-open.svg';
 import phoneIcon from '@public/images/icons/phone-right.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import RevealAnimation from '../animation/RevealAnimation';
 
 const contactInfoItems = [
@@ -41,6 +41,7 @@ const contactInfoItems = [
 ];
 
 const ContactInfo = () => {
+    const formRef = useRef<HTMLFormElement | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<{
         type: 'success' | 'error' | null;
@@ -77,8 +78,12 @@ const ContactInfo = () => {
                     type: 'success',
                     message: 'Thank you! Your message has been sent successfully.',
                 });
-                // Reset form
-                e.currentTarget.reset();
+                // Reset form after state update
+                setTimeout(() => {
+                    if (formRef.current) {
+                        formRef.current.reset();
+                    }
+                }, 0);
             } else {
                 setSubmitStatus({
                     type: 'error',
@@ -153,7 +158,7 @@ const ContactInfo = () => {
                     <p className="text-tagline-2">{submitStatus.message}</p>
                   </div>
                 )}
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
                 {/* name and phone number  */}
                 <div className="flex items-center flex-col md:flex-row gap-8 justify-between">
                   {/*  name */}
@@ -185,7 +190,7 @@ const ContactInfo = () => {
                       id="number"
                       name="number"
                       placeholder="Enter your number"
-                      required={true}
+                      required={false}
                       autoComplete="tel"
                       className="w-full px-[18px] dark:focus-visible:border-stroke-4/20 dark:border-stroke-7 py-3 h-[48px] xl:h-[41px] rounded-full dark:bg-background-6 border border-stroke-3 bg-background-1 text-tagline-2 placeholder:text-secondary/60 focus:outline-none focus:border-secondary placeholder:text-tagline-2 dark:placeholder:text-accent/60 dark:text-accent placeholder:font-normal font-normal"
                     />
