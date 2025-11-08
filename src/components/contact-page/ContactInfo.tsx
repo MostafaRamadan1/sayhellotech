@@ -70,52 +70,25 @@ const ContactInfo = () => {
                 body: JSON.stringify(data),
             });
 
-            // Parse response once
-            let result;
-            try {
-                result = await response.json();
-            } catch (parseError) {
-                // If JSON parsing fails, handle based on response status
-                if (response.ok) {
-                    // Response is OK but JSON parsing failed - assume success
-                    console.warn('Response OK but JSON parsing failed:', parseError);
-                    setSubmitStatus({
-                        type: 'success',
-                        message: 'Thank you! Your message has been sent successfully.',
-                    });
-                    e.currentTarget.reset();
-                    return;
-                } else {
-                    // Response is not OK and JSON parsing failed
-                    setSubmitStatus({
-                        type: 'error',
-                        message: response.statusText || 'Failed to send message. Please try again.',
-                    });
-                    return;
-                }
-            }
+            const result = await response.json();
 
-            // Check response status after parsing
             if (response.ok) {
-                // Success case
                 setSubmitStatus({
                     type: 'success',
-                    message: result.message || 'Thank you! Your message has been sent successfully.',
+                    message: 'Thank you! Your message has been sent successfully.',
                 });
                 // Reset form
                 e.currentTarget.reset();
             } else {
-                // Error case
                 setSubmitStatus({
                     type: 'error',
                     message: result.error || 'Failed to send message. Please try again.',
                 });
             }
         } catch (error) {
-            console.error('Form submission error:', error);
             setSubmitStatus({
                 type: 'error',
-                message: error instanceof Error ? error.message : 'An error occurred. Please try again later.',
+                message: 'An error occurred. Please try again later.',
             });
         } finally {
             setIsSubmitting(false);
