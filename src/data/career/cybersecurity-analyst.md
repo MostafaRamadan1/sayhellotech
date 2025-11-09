@@ -1,13 +1,13 @@
 ---
 title: 'Cybersecurity Analyst'
-datePosted: 'August 30, 2025'
-expirationDate: 'September 28, 2025'
-location: 'Austin, Texas, USA'
-offeredSalary: '$4,500 – $6,000 / month'
+datePosted: 'October 30, 2025'
+expirationDate: 'April 28, 2026'
+location: 'Riyadh, Riyadh, KSA'
+offeredSalary: 'Negotiable'
 experience: '3–5 Years of Professional Experience in Cybersecurity'
 qualification: 'Bachelor’s in Cybersecurity, Computer Science, or related field; Security+ or CEH preferred'
 shortDescription: 'Protect systems and data by monitoring threats and responding to security incidents.'
-employmentType: [full-time, onsite]
+employmentType: [full-time, hybrid]
 jobSkills:
   - Threat Detection
   - SIEM Tools

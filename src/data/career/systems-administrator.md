@@ -1,12 +1,12 @@
 ---
 title: 'Systems Administrator'
-datePosted: 'August 30, 2025'
-expirationDate: 'September 25, 2025'
-location: 'New York, USA'
-offeredSalary: '$3,500 – $4,500 / month'
+datePosted: 'October 30, 2025'
+expirationDate: 'April 28, 2026'
+location: 'Riyadh, Riyadh, KSA'
+offeredSalary: 'Negotiable'
 experience: '3–5 Years of Professional Experience'
 qualification: 'Bachelor’s Degree in Computer Science, Information Technology, or related field'
-employmentType: [full-time, onsite]
+employmentType: [full-time, hybrid]
 shortDescription: 'Ensure smooth IT operations by managing servers, networks, and cloud infrastructure.'
 jobSkills:
   - Windows & Linux Administration

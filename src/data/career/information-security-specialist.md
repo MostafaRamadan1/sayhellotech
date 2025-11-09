@@ -1,12 +1,12 @@
 ---
 title: 'Information Security Specialist'
-datePosted: 'August 30, 2025'
-expirationDate: 'September 30, 2025'
-location: 'Berlin, Germany'
-offeredSalary: '$4,200 – $5,800 / month'
+datePosted: 'October 30, 2025'
+expirationDate: 'April 28, 2026'
+location: 'Cairo, Egypt'
+offeredSalary: 'Negotiable'
 experience: '4–6 Years of Experience in Information Security'
 qualification: 'Bachelor’s or Master’s in Information Security, Computer Science, or related field'
-employmentType: [full-time, remote]
+employmentType: [full-time, hybrid]
 shortDescription: 'Develop and enforce security policies to safeguard company assets and ensure compliance.'
 jobSkills:
   - Security Policies & Governance

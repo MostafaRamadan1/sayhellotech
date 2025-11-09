@@ -8,6 +8,7 @@ import PageHero from '@/components/shared/PageHero';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 import { Fragment } from 'react';
+import FooterOne from '@/components/shared/footer/FooterOne';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
@@ -22,21 +23,11 @@ const Career = () => {
         btnClassName="btn-primary hover:btn-secondary dark:hover:btn-accent"
       />
       <main className="bg-background-3 dark:bg-background-5">
-        <PageHero title="Career" heading="Career" link="/career" className="bg-background-3 dark:bg-background-5" />
+        <PageHero title="Careers" heading="Careers" link="/career" className="bg-background-3 dark:bg-background-5" />
         <CareerContent />
-        <Features className="py-[100px] xl:py-[200px]" />
         <Positions />
-        <CTAV1
-          className="dark:bg-background-6 bg-white"
-          badgeClass="badge-green"
-          badgeText="Get Started"
-          ctaHeading="Ready to start earning with NextSaaS?"
-          description="If you have any questions, feel free to reach out to our team."
-          btnClass="hover:btn-secondary dark:hover:btn-accent"
-          ctaBtnText="Get started"
-        />
       </main>
-      <FooterThree />
+      <FooterOne />
     </Fragment>
   );
 };

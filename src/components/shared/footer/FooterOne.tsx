@@ -9,7 +9,6 @@ import youtube from '@public/images/icons/youtube.svg';
 import darkLogo from '@public/images/shared/dark-logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
 import ThemeToggle from '../ThemeToggle';
 import FooterDivider from './FooterDivider';
 import FooterLeftGradient from './FooterLeftGradient';
@@ -19,8 +18,8 @@ interface FooterOneProps {
   className?: string;
   defaultTheme?: 'light' | 'dark';
 }
-
-const FooterOne: FC<FooterOneProps> = ({ className, defaultTheme }) => {
+// const FooterFour = ({ className }: { className?: string }) => {
+const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
   return (
     <footer className={cn('bg-secondary dark:bg-background-8 relative overflow-hidden', className)}>
       {/* <!-- right gradient --> */}
@@ -34,10 +33,10 @@ const FooterOne: FC<FooterOneProps> = ({ className, defaultTheme }) => {
             <RevealAnimation delay={0.3}>
               <div className="max-w-[306px]">
                 <figure>
-                  <Image src={darkLogo} alt="NextSass Logo" />
+                  <Image src={darkLogo} alt="SayHelloTech Logo" />
                 </figure>
                 <p className="text-accent/60 text-tagline-1 mt-4 mb-7 font-normal">
-                  Turpis tortor nunc sed amet et faucibus vitae morbi congue sed id mauris.
+                    Because Great Code Starts with a Hello
                 </p>
                 <div className="flex items-center gap-3">
                   <Link target="_blank" href="https://www.facebook.com" className="footer-social-link">
@@ -58,16 +57,6 @@ const FooterOne: FC<FooterOneProps> = ({ className, defaultTheme }) => {
                   <Link target="_blank" href="https://www.linkedin.com" className="footer-social-link">
                     <span className="sr-only">LinkedIn</span>
                     <Image className="size-6" src={linkedin} alt="LinkedIn" />
-                  </Link>
-                  <div className="bg-stroke-1/20 h-6 w-px"></div>
-                  <Link target="_blank" href="https://www.dribbble.com" className="footer-social-link">
-                    <span className="sr-only">Dribbble</span>
-                    <Image className="size-6" src={dribbble} alt="Dribbble" />
-                  </Link>
-                  <div className="bg-stroke-1/20 h-6 w-px"></div>
-                  <Link target="_blank" href="https://www.behance.net" className="footer-social-link">
-                    <span className="sr-only">Behance</span>
-                    <Image className="size-6" src={behance} alt="Behance" />
                   </Link>
                 </div>
               </div>
@@ -172,7 +161,7 @@ const FooterOne: FC<FooterOneProps> = ({ className, defaultTheme }) => {
           <FooterDivider />
           <RevealAnimation delay={0.7} offset={10} start="top 105%">
             <p className="text-tagline-1 text-primary-50 font-normal">
-              Copyright &copy;NextSaaS – smart application for modern business
+              Copyright &copy;SayHelloTech – Because Great Code Starts with a Hello
             </p>
           </RevealAnimation>
         </div>

@@ -1,10 +1,10 @@
 ---
 title: 'Digital Marketing Specialist'
-datePosted: 'August 30, 2025'
-expirationDate: 'September 30, 2025'
-location: 'Dhaka, Bangladesh (Remote Friendly)'
-offeredSalary: '900$ - 1100$ / month'
-employmentType: [full-time, remote]
+datePosted: 'October 30, 2025'
+expirationDate: 'April 28, 2026'
+location: 'Cairo, Egypt'
+offeredSalary: 'Negotiable'
+employmentType: [full-time, hybrid]
 experience: '2–4 Years of Professional Experience'
 qualification: 'Bachelor’s Degree in Marketing, Business Administration, or related field'
 shortDescription: 'Plan and execute SEO, ads, and content campaigns to grow brand visibility and drive measurable results.'
@@ -14,7 +14,7 @@ jobSkills:
   - Meta Ads
   - Email Marketing
   - Content Marketing
-  - Copywriting
+  - Copy-writing
 ---
 
 #### Job Description
@@ -33,7 +33,7 @@ As a Digital Marketing Specialist, you’ll combine creativity with data-driven 
 - Demonstrated success with **SEO and PPC campaigns** .
 - Strong knowledge of **Google Ads, Social media ads**.
 - Experience with **Google Analytics,SEMrush, HubSpot**.
-- Strong **copywriting** and **storytelling** skills.
+- Strong **copy-writing** and **storytelling** skills.
 - Familiarity with **conversion funnels, CRO, and lead generation strategies**.
 - Ability to interpret data and prepare actionable performance reports.
 - Excellent communication and time management skills with attention to detail.

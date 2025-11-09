@@ -9,7 +9,7 @@ const CareerDetailsBody = ({ slug }: { slug: string }) => {
   const position = getMarkDownContent('src/data/career/', slug);
 
   return (
-    <section className="pb-[200px] pt-[100px]">
+    <section className="pb-[200px]">
       <div className="main-container">
         <CareerDetailsHeading />
         <div className="grid grid-cols-12 items-start gap-y-[70px] md:gap-y-0 md:gap-x-8 lg:gap-x-[70px] xl:gap-[100px]">

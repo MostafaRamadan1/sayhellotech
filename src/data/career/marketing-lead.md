@@ -1,12 +1,12 @@
 ---
 title: 'Marketing Lead'
-datePosted: 'August 30, 2025'
-expirationDate: 'September 20, 2025'
-location: 'London, UK'
-offeredSalary: '£4,000 – £5,500 / month'
+datePosted: 'October 30, 2025'
+expirationDate: 'April 28, 2026'
+location: 'Dubai, KSA'
+offeredSalary: 'Negotiable'
 experience: '5–7 Years of Marketing Experience'
 qualification: 'Bachelor’s in Marketing, Business Administration, or related field'
-employmentType: [full-time, remote]
+employmentType: [full-time, hybrid]
 shortDescription: 'Drive brand growth and lead generation through strategic marketing leadership.'
 jobSkills:
   - Brand Strategy

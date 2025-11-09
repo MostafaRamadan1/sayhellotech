@@ -7,7 +7,7 @@ const Positions = () => {
   const positions: IPosition[] = getMarkDownData('src/data/career');
 
   return (
-    <section className="py-[100px] xl:py-[200px]">
+    <section className="pb-[100px] xl:pb-[200px]">
       <div className="main-container">
         <div className="text-center mb-14">
           <RevealAnimation delay={0.1}>
