@@ -127,7 +127,7 @@ const ContactInfo = () => {
             <RevealAnimation key="contact_form" delay={0.4}>
               <div className="flex flex-col gap-8 md:flex-row lg:flex-col">
                 {contactInfoItems.map((item) => (
-                  <section key={item.id} delay={0.4}>
+                  <section key={item.id}>
                     <div
                       className="bg-secondary dark:bg-background-6 rounded-[20px] p-11 space-y-1 w-full md:max-w-[371px] text-center relative overflow-hidden">
                       {/* bg overlay  */}
