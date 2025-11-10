@@ -1,6 +1,4 @@
 import CareerDetailsBody from '@/components/career/CareerDetailsBody';
-import CTAV1 from '@/components/shared/cta/CTAV1';
-import FooterThree from '@/components/shared/footer/FooterThree';
 import NavbarOne from '@/components/shared/header/NavbarOne';
 import PageHero from '@/components/shared/PageHero';
 import { defaultMetadata } from '@/utils/generateMetaData';

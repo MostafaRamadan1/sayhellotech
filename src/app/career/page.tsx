@@ -1,10 +1,6 @@
 import CareerContent from '@/components/career/CareerContent';
 import Positions from '@/components/career/Positions';
-import Features from '@/components/homepage-07/Features';
-import CTAV1 from '@/components/shared/cta/CTAV1';
-import FooterThree from '@/components/shared/footer/FooterThree';
 import NavbarOne from '@/components/shared/header/NavbarOne';
-import PageHero from '@/components/shared/PageHero';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 import { Fragment } from 'react';
@@ -22,8 +18,8 @@ const Career = () => {
         className="border border-stroke-2 bg-accent/60 dark:border-stroke-6 dark:bg-background-9 backdrop-blur-[25px]"
         btnClassName="btn-primary hover:btn-secondary dark:hover:btn-accent"
       />
-      <main className="bg-background-3 dark:bg-background-5">
-        <PageHero title="Careers" heading="Careers" link="/career" className="bg-background-3 dark:bg-background-5" />
+      <main className="bg-background-3 dark:bg-background-5 pt-[100]">
+        {/*<PageHero title="Careers" heading="Careers" link="/career" className="bg-background-3 dark:bg-background-5" />*/}
         <CareerContent />
         <Positions />
       </main>

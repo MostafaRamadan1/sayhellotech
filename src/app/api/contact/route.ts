@@ -38,7 +38,7 @@ function createTransporter() {
 export async function GET() {
   try {
     console.log('=== Testing SMTP Connection ===');
-    
+
     // Validate SMTP configuration
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
       console.error('❌ Missing SMTP configuration:', {
@@ -48,7 +48,7 @@ export async function GET() {
         SMTP_PASSWORD: !!SMTP_PASSWORD,
       });
       return NextResponse.json(
-        { 
+        {
           success: false,
           error: 'Missing SMTP configuration',
           details: {
@@ -56,9 +56,9 @@ export async function GET() {
             SMTP_PORT: !!SMTP_PORT,
             SMTP_USER: !!SMTP_USER,
             SMTP_PASSWORD: !!SMTP_PASSWORD,
-          }
+          },
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -70,17 +70,17 @@ export async function GET() {
     });
 
     const transporter = createTransporter();
-    
+
     console.log('Attempting to verify SMTP connection...');
-    
+
     // Test the connection without sending an email
     await transporter.verify();
-    
+
     console.log('✅ SMTP Connection Test: SUCCESS');
     console.log('Connection verified successfully!');
-    
+
     return NextResponse.json(
-      { 
+      {
         success: true,
         message: 'SMTP connection test successful!',
         config: {
@@ -88,9 +88,9 @@ export async function GET() {
           port: SMTP_PORT,
           user: SMTP_USER,
           secure: parseInt(String(SMTP_PORT)) === 465,
-        }
+        },
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: any) {
     console.error('❌ SMTP Connection Test: FAILED');
@@ -102,9 +102,9 @@ export async function GET() {
       syscall: error.syscall,
       message: error.message,
     });
-    
+
     let errorMessage = 'SMTP connection test failed.';
-    
+
     if (error.code === 'EAUTH') {
       errorMessage = 'SMTP authentication failed. Please check your email credentials.';
       console.error('❌ Authentication failed - check username and password');
@@ -117,9 +117,9 @@ export async function GET() {
     } else {
       console.error('❌ Unexpected error:', error.message);
     }
-    
+
     return NextResponse.json(
-      { 
+      {
         success: false,
         error: errorMessage,
         details: {
@@ -127,16 +127,16 @@ export async function GET() {
           message: error.message,
           address: error.address,
           port: error.port,
-        }
+        },
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
-    console.log("Received contact form submission");
+    console.log('Received contact form submission');
     const body = await request.json();
     const { fullname, email, number, subject, message } = body;
 
@@ -144,7 +144,7 @@ export async function POST(request: NextRequest) {
     if (!fullname || !email || !subject || !message) {
       return NextResponse.json(
         { error: 'Missing required fields' },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -153,7 +153,7 @@ export async function POST(request: NextRequest) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: 'Invalid email format' },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -167,7 +167,7 @@ export async function POST(request: NextRequest) {
       });
       return NextResponse.json(
         { error: 'Email service is not configured. Please contact the administrator.' },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -181,7 +181,7 @@ export async function POST(request: NextRequest) {
       replyTo: email, // This allows replies to go to the user's email
       to: RECIPIENT_EMAIL,
       subject: `Customer request : ${subject}`,
-        html: `
+      html: `
           <div style="font-family: 'Segoe UI', Roboto, Arial, sans-serif; color: #333; background-color: #f9fafb; padding: 24px;">
             <div style="max-width: 600px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 24px;">
               <h2 style="color: #0078ff; margin-bottom: 8px;">👋 New Request from ${fullname}</h2>
@@ -201,7 +201,7 @@ export async function POST(request: NextRequest) {
             </div>
           </div>
         `,
-        text: `
+      text: `
         👋 New Request from ${fullname}
         
         Someone just said hello on your website!
@@ -225,10 +225,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: any) {
-    console.error('Error sending email:', error);
     console.error('Error details:', {
       code: error.code,
       command: error.command,
@@ -236,10 +235,10 @@ export async function POST(request: NextRequest) {
       port: error.port,
       syscall: error.syscall,
     });
-    
+
     // Provide more specific error messages
     let errorMessage = 'Failed to send email. Please try again later.';
-    
+
     if (error.code === 'EAUTH') {
       errorMessage = 'SMTP authentication failed. Please check your email credentials.';
     } else if (error.code === 'ECONNECTION' || error.code === 'ETIMEDOUT' || error.code === 'ESOCKET') {
@@ -249,10 +248,10 @@ export async function POST(request: NextRequest) {
     } else if (error.code === 'ETIMEDOUT') {
       errorMessage = 'Connection timeout. The SMTP server is not responding. Try port 587 instead of 465.';
     }
-    
+
     return NextResponse.json(
       { error: errorMessage },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

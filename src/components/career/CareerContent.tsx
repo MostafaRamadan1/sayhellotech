@@ -4,17 +4,21 @@ import RevealAnimation from '../animation/RevealAnimation';
 
 const CareerContent = () => {
   return (
-    <section className="pb-[100px] xl:pb-[100px]">
+    <section className="pb-[100px] xl:pb-[100px] pt-[100px]">
       <div className="main-container">
         <div className="text-center space-y-3 mb-[70px]">
+          <RevealAnimation delay={0.2}>
+            <span className="badge badge-green mb-5 ">Your Next Hello Starts Here.</span>
+          </RevealAnimation>
           <RevealAnimation delay={0.3}>
             <h2>
-                We’re building the future of tech with human touch — <br className="hidden md:block" /> come code it with us.
+              We’re building the future of tech with <span className="text-primary-500">human touch</span> — <br
+              className="hidden md:block" /> come code it with us.
             </h2>
           </RevealAnimation>
         </div>
         <RevealAnimation delay={0.4}>
-          <figure >
+          <figure>
             <Image src={bannerImage} alt="banner-image" className="rounded-2xl" width={1290} />
           </figure>
         </RevealAnimation>

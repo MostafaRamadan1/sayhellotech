@@ -17,7 +17,7 @@ const Positions = () => {
             <h2>
               Become part of the
               <br className="hidden md:block" />
-              dream-team
+              <span className="text-primary-500"> dream-team</span>
             </h2>
           </RevealAnimation>
         </div>
@@ -25,7 +25,8 @@ const Positions = () => {
           {positions?.map((singlePost) => (
             <RevealAnimation delay={0.3} key={singlePost?.slug}>
               <div>
-                <div className="bg-background-1 dark:bg-background-6 space-y-8 p-11 rounded-[20px] hover:scale-[100.5%] hover:shadow-md transition-all duration-[400ms]">
+                <div
+                  className="bg-background-1 dark:bg-background-6 space-y-8 p-11 rounded-[20px] hover:scale-[100.5%] hover:shadow-md transition-all duration-[400ms]">
                   <div className="flex items-center gap-2">
                     {singlePost?.employmentType?.map((type) => (
                       <span className="badge badge-gray-light" key={type}>
@@ -40,7 +41,7 @@ const Positions = () => {
                   <div>
                     <LinkButton
                       href={`/career/${singlePost?.slug}`}
-                      className="btn hover:btn-secondary dark:btn-transparent dark:hover:btn-accent btn-md btn-white">
+                      className="btn hover:btn-primary dark:btn-transparent dark:hover:btn-accent btn-md btn-white">
                       Read more
                     </LinkButton>
                   </div>

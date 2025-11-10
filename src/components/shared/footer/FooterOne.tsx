@@ -1,7 +1,5 @@
 import RevealAnimation from '@/components/animation/RevealAnimation';
 import { cn } from '@/utils/cn';
-import behance from '@public/images/icons/behance.svg';
-import dribbble from '@public/images/icons/dribbble.svg';
 import facebook from '@public/images/icons/facebook.svg';
 import instagram from '@public/images/icons/instagram.svg';
 import linkedin from '@public/images/icons/linkedin.svg';
@@ -18,6 +16,7 @@ interface FooterOneProps {
   className?: string;
   defaultTheme?: 'light' | 'dark';
 }
+
 // const FooterFour = ({ className }: { className?: string }) => {
 const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
   return (
@@ -36,7 +35,7 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                   <Image src={darkLogo} alt="SayHelloTech Logo" />
                 </figure>
                 <p className="text-accent/60 text-tagline-1 mt-4 mb-7 font-normal">
-                    Because Great Code Starts with a Hello
+                  Because Great Code Starts with a Hello
                 </p>
                 <div className="flex items-center gap-3">
                   <Link target="_blank" href="https://www.facebook.com" className="footer-social-link">
@@ -79,11 +78,6 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/case-study" className="footer-link">
-                        Case Studies
-                      </Link>
-                    </li>
-                    <li>
                       <Link href="/contact-us" className="footer-link">
                         Contact Us
                       </Link>
@@ -103,58 +97,48 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/documentation" className="footer-link">
-                        Documentation
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/tutorial" className="footer-link">
-                        Tutorial
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/support" className="footer-link">
-                        Support
+                      <Link href="/contact-us" className="footer-link">
+                        Contact Us
                       </Link>
                     </li>
                   </ul>
                 </div>
               </RevealAnimation>
             </div>
-            <div className="col-span-12 md:col-span-4">
-              <RevealAnimation delay={0.6}>
-                <div className="space-y-8">
-                  <p className="sm:text-heading-6 text-tagline-1 text-primary-50 font-normal">Legal Policies</p>
-                  <ul className="space-y-3 sm:space-y-5">
-                    <li>
-                      <Link href="/terms-conditions" className="footer-link">
-                        Terms & Conditions
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/privacy" className="footer-link">
-                        Privacy Policy
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/refund-policy" className="footer-link">
-                        Refund Policy
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/gdpr" className="footer-link">
-                        GDPR Compliance
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/affiliate-policy" className="footer-link">
-                        Affiliate Policy
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </RevealAnimation>
-            </div>
+            {/*<div className="col-span-12 md:col-span-4">*/}
+            {/*  <RevealAnimation delay={0.6}>*/}
+            {/*    <div className="space-y-8">*/}
+            {/*      <p className="sm:text-heading-6 text-tagline-1 text-primary-50 font-normal">Legal Policies</p>*/}
+            {/*      <ul className="space-y-3 sm:space-y-5">*/}
+            {/*        <li>*/}
+            {/*          <Link href="/terms-conditions" className="footer-link">*/}
+            {/*            Terms & Conditions*/}
+            {/*          </Link>*/}
+            {/*        </li>*/}
+            {/*        <li>*/}
+            {/*          <Link href="/privacy" className="footer-link">*/}
+            {/*            Privacy Policy*/}
+            {/*          </Link>*/}
+            {/*        </li>*/}
+            {/*        <li>*/}
+            {/*          <Link href="/refund-policy" className="footer-link">*/}
+            {/*            Refund Policy*/}
+            {/*          </Link>*/}
+            {/*        </li>*/}
+            {/*        <li>*/}
+            {/*          <Link href="/gdpr" className="footer-link">*/}
+            {/*            GDPR Compliance*/}
+            {/*          </Link>*/}
+            {/*        </li>*/}
+            {/*        <li>*/}
+            {/*          <Link href="/affiliate-policy" className="footer-link">*/}
+            {/*            Affiliate Policy*/}
+            {/*          </Link>*/}
+            {/*        </li>*/}
+            {/*      </ul>*/}
+            {/*    </div>*/}
+            {/*  </RevealAnimation>*/}
+            {/*</div>*/}
           </div>
         </div>
         <div className="relative pt-[26px] pb-[100px] text-center">
