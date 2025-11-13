@@ -18,9 +18,13 @@ const VisionStatement = () => {
           </RevealAnimation>
           <RevealAnimation delay={0.4}>
             <p>
-              At SayHelloTech, we believe software should empower people, not overwhelm them. That&apos;s why we&apos;ve
-              created a flexible, intuitive platform that helps teams streamline operations, gain clarity from data, and
-              scale faster, without the complexity.
+              At SayHelloTech, we believe great technology starts with great people.
+              Our story began with a simple idea — what if hiring top developers was as seamless as working with them?
+
+              Today, we connect ambitious companies with talented engineers, designers, and tech experts who bring ideas
+              to life.
+              From startups to global enterprises, we help teams scale faster, work smarter, and focus on what truly
+              matters — building products that make a difference.
             </p>
           </RevealAnimation>
         </div>

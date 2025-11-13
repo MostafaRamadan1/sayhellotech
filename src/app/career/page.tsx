@@ -8,7 +8,7 @@ import FooterOne from '@/components/shared/footer/FooterOne';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'Career - NextSaaS',
+  title: 'Career - SayHelloTech',
 };
 
 const Career = () => {
