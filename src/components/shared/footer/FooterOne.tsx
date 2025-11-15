@@ -38,24 +38,14 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                   Because Great Code Starts with a Hello
                 </p>
                 <div className="flex items-center gap-3">
-                  <Link target="_blank" href="https://www.facebook.com" className="footer-social-link">
-                    <span className="sr-only">Facebook</span>
-                    <Image className="size-6" src={facebook} alt="Facebook" />
-                  </Link>
-                  <div className="bg-stroke-1/20 h-6 w-px"></div>
-                  <Link target="_blank" href="https://www.instagram.com" className="footer-social-link">
-                    <span className="sr-only">Instagram</span>
-                    <Image className="size-6" src={instagram} alt="Instagram" />
+                  <Link target="_blank" href="https://www.linkedin.com" className="footer-social-link">
+                    <span className="sr-only">LinkedIn</span>
+                    <Image className="size-6" src={linkedin} alt="LinkedIn" />
                   </Link>
                   <div className="bg-stroke-1/20 h-6 w-px"></div>
                   <Link target="_blank" href="https://www.youtube.com" className="footer-social-link">
                     <span className="sr-only">Youtube</span>
                     <Image className="size-6" src={youtube} alt="Youtube" />
-                  </Link>
-                  <div className="bg-stroke-1/20 h-6 w-px"></div>
-                  <Link target="_blank" href="https://www.linkedin.com" className="footer-social-link">
-                    <span className="sr-only">LinkedIn</span>
-                    <Image className="size-6" src={linkedin} alt="LinkedIn" />
                   </Link>
                 </div>
               </div>
@@ -68,7 +58,12 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                   <p className="sm:text-heading-6 text-tagline-1 text-primary-50 font-normal">Company</p>
                   <ul className="space-y-3 sm:space-y-5">
                     <li>
-                      <Link href="/about-01" className="footer-link">
+                      <Link href="/services" className="footer-link">
+                        Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/about" className="footer-link">
                         About Us
                       </Link>
                     </li>

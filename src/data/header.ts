@@ -22,23 +22,14 @@ export const navigationItems: NavigationItem[] = [
   {
     id: 'home',
     label: 'Home',
-    href: '#',
-    hasDropdown: true,
-    megaMenuComponent: 'HomeMegaMenu',
-  },
-  {
-    id: 'pages',
-    label: 'Pages',
-    href: '#',
-    hasDropdown: true,
-    megaMenuComponent: 'PageMegaMenu',
+    href: '/',
+    hasDropdown: false,
   },
   {
     id: 'about',
     label: 'About',
     href: '/about',
     hasDropdown: false,
-    // megaMenuComponent: 'AboutMenu',
   },
 
   {
@@ -46,14 +37,12 @@ export const navigationItems: NavigationItem[] = [
     label: 'Services',
     href: '/services',
     hasDropdown: false,
-    // megaMenuComponent: 'ServicesMenu',
   },
   {
     id: 'careers',
     label: 'Careers',
     href: '/career',
     hasDropdown: false,
-    // megaMenuComponent: 'AboutMenu',
   },
 
   {
