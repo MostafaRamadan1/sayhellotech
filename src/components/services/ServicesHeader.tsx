@@ -1,16 +1,4 @@
-import { IService } from '@/interface';
-import getMarkDownContent from '@/utils/getMarkDownContent';
 import RevealAnimation from '../animation/RevealAnimation';
-import LinkButton from '../ui/button/LinkButton';
-import Image from 'next/image';
-import gradient1 from '@public/images/gradient/gradient-1.png';
-import gradient2 from '@public/images/gradient/gradient-2.png';
-import gradient3 from '@public/images/gradient/gradient-3.png';
-import gradient5 from '@public/images/gradient/gradient-5.png';
-import gradient22 from '@public/images/gradient/gradient-22.png';
-import gradient28 from '@public/images/gradient/gradient-28.png';
-import ServicesBanner from '@/components/services/ServicesBanner';
-import Feature from '@/components/services/Feature';
 
 const ServicesHeader = () => {
   return (

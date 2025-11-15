@@ -1,10 +1,8 @@
-import { IService } from '@/interface';
 import getMarkDownContent from '@/utils/getMarkDownContent';
 import ReactMarkdown from 'react-markdown';
 import rehypeSlug from 'rehype-slug';
 import RevealAnimation from '../animation/RevealAnimation';
 import TableOfContent from './TableOfContent';
-import UserReview from './UserReview';
 
 const Contents = ({ slug }: { slug: string }) => {
   const service = getMarkDownContent('src/data/services/', slug);

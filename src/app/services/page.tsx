@@ -1,12 +1,10 @@
 import Services from '@/components/services/Services';
-
 import FooterOne from '@/components/shared/footer/FooterOne';
 import NavbarOne from '@/components/shared/header/NavbarOne';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 import { Fragment } from 'react';
 import Feature from '@/components/services/Feature';
-import Banner from '@/components/tutorial/Banner';
 import ServicesHeader from '@/components/services/ServicesHeader';
 import ServicesBanner from '@/components/services/ServicesBanner';
 

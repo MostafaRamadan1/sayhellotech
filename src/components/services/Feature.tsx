@@ -1,6 +1,5 @@
 import { CheckIcon } from '@/icons';
 import { cn } from '@/utils/cn';
-import aboutBg from '@public/images/home-page-2/about-bg.png';
 import workBg from '@public/images/home-page-2/work-bg.png';
 import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
