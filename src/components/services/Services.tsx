@@ -14,12 +14,12 @@ import Feature from '@/components/services/Feature';
 
 const Services = () => {
   // Import service files individually
-  const service1 = getMarkDownContent('src/data/available-services/', 'web-development');
-  const service2 = getMarkDownContent('src/data/available-services/', 'mobile-development');
-  const service3 = getMarkDownContent('src/data/available-services/', 'devops-cloud');
-  const service4 = getMarkDownContent('src/data/available-services/', 'qa-testing');
-  const service5 = getMarkDownContent('src/data/available-services/', 'ui-ux-design');
-  const service6 = getMarkDownContent('src/data/available-services/', 'machine-learning-and-ai');
+  const service1 = getMarkDownContent('src/data/services/', 'web-development');
+  const service2 = getMarkDownContent('src/data/services/', 'mobile-development');
+  const service3 = getMarkDownContent('src/data/services/', 'devops-cloud');
+  const service4 = getMarkDownContent('src/data/services/', 'qa-testing');
+  const service5 = getMarkDownContent('src/data/services/', 'ui-ux-design');
+  const service6 = getMarkDownContent('src/data/services/', 'machine-learning-and-ai');
 
   const servicesData: IService[] = [
     {
