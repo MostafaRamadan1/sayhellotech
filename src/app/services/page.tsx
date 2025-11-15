@@ -7,7 +7,6 @@ import { Metadata } from 'next';
 import { Fragment } from 'react';
 import Feature from '@/components/services/Feature';
 import Banner from '@/components/tutorial/Banner';
-import Intro from '@/components/services/Intro';
 import ServicesHeader from '@/components/services/ServicesHeader';
 import ServicesBanner from '@/components/services/ServicesBanner';
 
