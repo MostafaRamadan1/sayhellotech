@@ -7,6 +7,7 @@ import { defaultMetadata } from '@/utils/generateMetaData';
 import getMarkDownData from '@/utils/getMarkDownData';
 import { Metadata } from 'next';
 import { Fragment } from 'react';
+import FooterOne from '@/components/shared/footer/FooterOne';
 
 export async function generateStaticParams() {
   const services = getMarkDownData('src/data/services');
@@ -32,17 +33,8 @@ const OurServicesDetails = async ({ params }: { params: Promise<{ slug: string }
       <main className="bg-background-3 dark:bg-background-7">
         <PageHero title="Our Services Details" heading="Services Details" link="#" />
         <Contents slug={slug} />
-        <CTAV1
-          className="dark:bg-background-6 bg-white"
-          badgeClass="hidden"
-          ctaHeading="Build a complete website using the"
-          spanText="assistance"
-          description="Start your free trial today and see your ideas come to life easily and creatively."
-          btnClass="hover:btn-secondary dark:hover:btn-accent"
-          ctaBtnText="Get started"
-        />
       </main>
-      <FooterThree />
+      <FooterOne />
     </Fragment>
   );
 };

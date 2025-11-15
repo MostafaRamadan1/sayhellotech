@@ -17,9 +17,9 @@ userReview:
 Our **Mobile App Development service** delivers native and cross-platform applications that combine performance,
 usability, and reliability. Perfect for businesses that want to engage users on the go.
 
-![Service images](/images/services/mobile-1.png)
+[//]: # (![Service images]&#40;/images/services/mobile-1.png&#41;)
 
-### What’s included
+### Service features
 
 - **Native iOS & Android apps** – Seamless experience on all devices.
 - **Cross-platform development** – Efficient code for multiple platforms.
@@ -28,8 +28,8 @@ usability, and reliability. Perfect for businesses that want to engage users on 
 - **App store deployment** – Smooth submission and approval process.
 - **Performance optimization** – Fast, responsive, and reliable.
 
-![Service images](/images/services/mobile-2.png)
-
+[//]: # (![Service images]&#40;/images/services/mobile-2.png&#41;)
+&nbsp;
 ### Use cases
 
 - **Consumer apps** – Engage and retain customers.
@@ -38,8 +38,8 @@ usability, and reliability. Perfect for businesses that want to engage users on 
 - **Productivity tools** – Mobile-first solutions for teams.
 - **Health & wellness apps** – Track and improve user experiences.
 
-![Service images](/images/services/mobile-3.png)
-
+[//]: # (![Service images]&#40;/images/services/mobile-3.png&#41;)
+&nbsp;
 ### Built-in performance and scalability
 
 - **Offline support & caching**

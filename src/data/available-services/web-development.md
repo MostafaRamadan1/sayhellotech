@@ -17,9 +17,9 @@ userReview:
 Our **Web Development service** creates websites that are fast, scalable, and user-friendly. From simple landing pages
 to complex web apps, we deliver tailored solutions that align with your business goals.
 
-![Service images](/images/services/web-1.png)
+[//]: # (![Service images]&#40;/images/services/web-1.png&#41;)
 
-### What’s included
+### Service features
 
 - **Responsive design** – Optimized for desktop, tablet, and mobile.
 - **Custom front-end solutions** – Unique and branded user experiences.
@@ -28,8 +28,8 @@ to complex web apps, we deliver tailored solutions that align with your business
 - **CMS integration** – Easy content management.
 - **Performance optimization** – Fast load times and smooth UX.
 
-![Service images](/images/services/web-2.png)
-
+[//]: # (![Service images]&#40;/images/services/web-2.png&#41;)
+&nbsp;
 ### Use cases
 
 - **E-commerce** – Robust online stores with secure payment gateways.
@@ -38,8 +38,8 @@ to complex web apps, we deliver tailored solutions that align with your business
 - **Portfolio & personal sites** – Showcase work with style.
 - **Marketing landing pages** – Conversion-focused design.
 
-![Service images](/images/services/web-3.png)
-
+[//]: # (![Service images]&#40;/images/services/web-3.png&#41;)
+&nbsp;
 ### Built-in performance and scalability
 
 - **Optimized for high traffic loads**

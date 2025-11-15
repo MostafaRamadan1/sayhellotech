@@ -17,9 +17,9 @@ userReview:
 Our **UI/UX Design service** ensures your products are not only visually appealing but also intuitive and user-friendly.
 We focus on human-centered design to boost engagement and satisfaction.
 
-![Service images](/images/services/uiux-1.png)
+[//]: # (![Service images]&#40;/images/services/uiux-1.png&#41;)
 
-### What’s included
+### Service features
 
 - **Wireframing & prototyping** – Plan interfaces efficiently.
 - **User research & testing** – Insights to guide design decisions.
@@ -28,8 +28,8 @@ We focus on human-centered design to boost engagement and satisfaction.
 - **Interactive UI components** – Engaging and functional.
 - **Design handoff & documentation** – Smooth transition to development.
 
-![Service images](/images/services/uiux-2.png)
-
+[//]: # (![Service images]&#40;/images/services/uiux-2.png&#41;)
+&nbsp;
 ### Use cases
 
 - **Web apps** – User-friendly interfaces for online platforms.
@@ -38,8 +38,8 @@ We focus on human-centered design to boost engagement and satisfaction.
 - **Enterprise dashboards** – Clarity for complex data.
 - **Marketing campaigns** – Visual storytelling for engagement.
 
-![Service images](/images/services/uiux-3.png)
-
+[//]: # (![Service images]&#40;/images/services/uiux-3.png&#41;)
+&nbsp;
 ### Built-in performance and scalability
 
 - **Design system creation**

@@ -34,24 +34,8 @@ const Feature = ({ className, btnClassName }: { className?: string; btnClassName
 
   return (
     <section className={className}>
-      <RevealAnimation delay={0.2}>
-        <div className="main-container pb-[100px] ">
-
-          <div className="max-w-[680px] mx-auto text-center pb-[50px]">
-            <RevealAnimation delay={0.2}>
-              <span className="badge badge-green mb-5">Redefining exceptional service.</span>
-            </RevealAnimation>
-            <RevealAnimation delay={0.2}>
-              <h2>Built for teams that <span className="text-primary-500">never stop</span> building.</h2>
-            </RevealAnimation>
-            <RevealAnimation delay={0.3}>
-              <p>
-                We’re proud to support the dreamers, builders, and innovators shaping tomorrow’s tech — with dedicated
-                talent that feels like part of your team.
-              </p>
-            </RevealAnimation>
-          </div>
-
+      <RevealAnimation delay={0.5}>
+        <div className="main-container ">
           <div className="relative z-10 ">
             <div
               className="absolute top-0 left-0 right-0 bottom-0 -z-10 rounded-[20px] overflow-hidden bg-background-9">

@@ -105,40 +105,30 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                 </div>
               </RevealAnimation>
             </div>
-            {/*<div className="col-span-12 md:col-span-4">*/}
-            {/*  <RevealAnimation delay={0.6}>*/}
-            {/*    <div className="space-y-8">*/}
-            {/*      <p className="sm:text-heading-6 text-tagline-1 text-primary-50 font-normal">Legal Policies</p>*/}
-            {/*      <ul className="space-y-3 sm:space-y-5">*/}
-            {/*        <li>*/}
-            {/*          <Link href="/terms-conditions" className="footer-link">*/}
-            {/*            Terms & Conditions*/}
-            {/*          </Link>*/}
-            {/*        </li>*/}
-            {/*        <li>*/}
-            {/*          <Link href="/privacy" className="footer-link">*/}
-            {/*            Privacy Policy*/}
-            {/*          </Link>*/}
-            {/*        </li>*/}
-            {/*        <li>*/}
-            {/*          <Link href="/refund-policy" className="footer-link">*/}
-            {/*            Refund Policy*/}
-            {/*          </Link>*/}
-            {/*        </li>*/}
-            {/*        <li>*/}
-            {/*          <Link href="/gdpr" className="footer-link">*/}
-            {/*            GDPR Compliance*/}
-            {/*          </Link>*/}
-            {/*        </li>*/}
-            {/*        <li>*/}
-            {/*          <Link href="/affiliate-policy" className="footer-link">*/}
-            {/*            Affiliate Policy*/}
-            {/*          </Link>*/}
-            {/*        </li>*/}
-            {/*      </ul>*/}
-            {/*    </div>*/}
-            {/*  </RevealAnimation>*/}
-            {/*</div>*/}
+            <div className="col-span-12 md:col-span-4">
+              <RevealAnimation delay={0.6}>
+                <div className="space-y-8">
+                  <p className="sm:text-heading-6 text-tagline-1 text-primary-50 font-normal">Legal Policies</p>
+                  <ul className="space-y-3 sm:space-y-5">
+                    <li>
+                      <Link href="/terms-conditions" className="footer-link">
+                        Terms & Conditions
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/privacy" className="footer-link">
+                        Privacy Policy
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/gdpr" className="footer-link">
+                        GDPR Compliance
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </RevealAnimation>
+            </div>
           </div>
         </div>
         <div className="relative pt-[26px] pb-[100px] text-center">

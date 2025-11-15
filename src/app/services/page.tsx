@@ -6,6 +6,10 @@ import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 import { Fragment } from 'react';
 import Feature from '@/components/services/Feature';
+import Banner from '@/components/tutorial/Banner';
+import Intro from '@/components/services/Intro';
+import ServicesHeader from '@/components/services/ServicesHeader';
+import ServicesBanner from '@/components/services/ServicesBanner';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
@@ -21,8 +25,11 @@ const OurServices01 = () => {
         megaMenuColor="!bg-background-3 dark:!bg-background-7"
       />
       <main className="bg-background-1 dark:bg-background-6 pt-[100px]">
+        <ServicesHeader />
+        <ServicesBanner />
         <Services />
-        <Feature />
+        <Feature className="pb-[100px] " />
+
       </main>
       <FooterOne />
     </Fragment>

@@ -17,9 +17,9 @@ userReview:
 Our **QA & Testing service** ensures that your applications run smoothly, securely, and efficiently. We identify issues
 before your users do — saving time, money, and frustration.
 
-![Service images](/images/services/qa-1.png)
+[//]: # (![Service images]&#40;/images/services/qa-1.png&#41;)
 
-### What’s included
+### Service features
 
 - **Functional testing** – Verify all features work as intended.
 - **Performance testing** – Ensure speed under load.
@@ -28,8 +28,8 @@ before your users do — saving time, money, and frustration.
 - **Automated testing scripts** – Repeatable, fast, and accurate.
 - **Regression testing** – Ensure new updates don’t break functionality.
 
-![Service images](/images/services/qa-2.png)
-
+[//]: # (![Service images]&#40;/images/services/qa-2.png&#41;)
+&nbsp;
 ### Use cases
 
 - **Web applications** – Stability and reliability for users.
@@ -38,8 +38,8 @@ before your users do — saving time, money, and frustration.
 - **Enterprise systems** – Error-free operations at scale.
 - **SaaS products** – Reliable service delivery.
 
-![Service images](/images/services/qa-3.png)
-
+[//]: # (![Service images]&#40;/images/services/qa-3.png&#41;)
+&nbsp;
 ### Built-in performance and scalability
 
 - **Automated test pipelines**

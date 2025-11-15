@@ -20,9 +20,9 @@ experiences, and unlock new growth opportunities.
 At SayHelloTech, we make AI accessible and responsible—helping businesses of all sizes adopt intelligent systems with
 confidence and clarity.
 
-![Service images](/images/services/service-details-1.png)
+[//]: # (![Service images]&#40;/images/services/service-details-1.png&#41;)
 
-### What’s included
+### Service features
 
 - **Predictive analytics** – Forecast trends and customer behavior with precision.
 - **Natural language processing (NLP)** – Automate text, chat, and voice interactions.
@@ -31,8 +31,8 @@ confidence and clarity.
 - **Custom AI models** – Tailor machine learning solutions to your business goals.
 - **Integration services** – Seamlessly embed AI into CRMs, ERPs, and internal systems.
 
-![Service images](/images/services/service-details-2.png)
-
+[//]: # (![Service images]&#40;/images/services/service-details-2.png&#41;)
+&nbsp;
 ### Use cases
 
 - **E-commerce** – Personalize recommendations and predict customer churn.
@@ -41,8 +41,8 @@ confidence and clarity.
 - **Manufacturing** – Improve quality control and predictive maintenance.
 - **Marketing & Sales** – Boost lead scoring and automate engagement.
 
-![Service images](/images/services/service-details-3.jpg)
-
+[//]: # (![Service images]&#40;/images/services/service-details-3.jpg&#41;)
+&nbsp;
 ### Built-in security and controls
 
 - **Data privacy compliance** with GDPR, HIPAA, and SOC 2.

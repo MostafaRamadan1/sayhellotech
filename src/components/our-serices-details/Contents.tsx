@@ -7,7 +7,7 @@ import TableOfContent from './TableOfContent';
 import UserReview from './UserReview';
 
 const Contents = ({ slug }: { slug: string }) => {
-  const service = getMarkDownContent('src/data/services/', slug);
+  const service = getMarkDownContent('src/data/available-services/', slug);
 
   return (
     <section className="pt-14 md:pt-16 lg:pt-[88px] xl:pt-[100px] pb-24 md:pb-36 lg:pb-44 xl:pb-[200px]">
@@ -19,9 +19,6 @@ const Contents = ({ slug }: { slug: string }) => {
                 <ReactMarkdown rehypePlugins={[[rehypeSlug]]}>{service.content}</ReactMarkdown>
               </div>
             </RevealAnimation>
-
-            {/* user review  */}
-            <UserReview service={service.data as IService} />
           </div>
 
           {/* Table of Contents */}

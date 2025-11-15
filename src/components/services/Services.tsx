@@ -9,6 +9,8 @@ import gradient3 from '@public/images/gradient/gradient-3.png';
 import gradient5 from '@public/images/gradient/gradient-5.png';
 import gradient22 from '@public/images/gradient/gradient-22.png';
 import gradient28 from '@public/images/gradient/gradient-28.png';
+import ServicesBanner from '@/components/services/ServicesBanner';
+import Feature from '@/components/services/Feature';
 
 const Services = () => {
   // Import service files individually
@@ -22,32 +24,32 @@ const Services = () => {
   const servicesData: IService[] = [
     {
       ...(service1.data as IService),
-      slug: 'automated-background-replacement',
+      slug: 'web-development',
       content: service1.content,
     },
     {
       ...(service2.data as IService),
-      slug: 'batch-image-processing',
+      slug: 'mobile-development',
       content: service2.content,
     },
     {
       ...(service3.data as IService),
-      slug: 'big-data-consulting',
+      slug: 'devops-cloud',
       content: service3.content,
     },
     {
       ...(service4.data as IService),
-      slug: 'business-analysis',
+      slug: 'qa-testing',
       content: service4.content,
     },
     {
       ...(service5.data as IService),
-      slug: 'machine-learning-and-ai',
+      slug: 'ui-ux-design',
       content: service5.content,
     },
     {
       ...(service6.data as IService),
-      slug: 'cloud-integration',
+      slug: 'machine-learning-and-ai',
       content: service6.content,
     },
   ];
@@ -58,31 +60,24 @@ const Services = () => {
   return (
     <section className="py-14 md:py-16 lg:py-[88px] xl:py-[100px] pt-[100px]">
       <div className="main-container">
-        <div className="text-center space-y-5 mb-[70px]">
-          <RevealAnimation delay={0.2}>
-            <span className="badge badge-green-v2">Our Services</span>
+        <div className="max-w-[680px] mx-auto text-center pb-[100px]">
+          <RevealAnimation delay={0.1}>
+            <span className="badge badge-green mb-5">Redefining exceptional service.</span>
           </RevealAnimation>
-          <div className="space-y-3">
-            <RevealAnimation delay={0.3}>
-              <h2 className="max-w-[950px] mx-auto text-center">
-                Empowering teams. Elevating businesses. <br className="hidden md:block" />Built by <span
-                className="text-primary-500">people
-                who care.</span>
-              </h2>
-            </RevealAnimation>
-            <RevealAnimation delay={0.4}>
-              <p className="max-w-[700px] mx-auto text-center">
-                At SayHelloTech, we bring together talented developers and
-                forward-thinking companies.
-                Every service we offer is designed to help you grow faster, build smarter, and focus on what truly
-                matters — your vision.
-              </p>
-            </RevealAnimation>
-          </div>
+          <RevealAnimation delay={0.2}>
+            <h2>Built for teams that <span className="text-primary-500">never stop</span> building.</h2>
+          </RevealAnimation>
+          <RevealAnimation delay={0.3}>
+            <p>
+              We’re proud to support the dreamers, builders, and innovators shaping tomorrow’s tech — with dedicated
+              talent that feels like part of your team.
+            </p>
+          </RevealAnimation>
         </div>
+
         <div className="grid grid-cols-12 xl:gap-8 md:gap-8 gap-y-5">
           {servicesData.map((service, index) => (
-            <RevealAnimation key={'service-id-' + index + 1} delay={0.5 + index * 0.1}>
+            <RevealAnimation key={'service-id-' + index + 1} delay={0.3 + index * 0.1}>
               <div className="col-span-12 md:col-span-6 xl:col-span-4 ">
                 <div
                   className="group relative z-10 grid items-center justify-center space-y-6 overflow-hidden rounded-[20px] bg-background-3
@@ -119,7 +114,7 @@ const Services = () => {
         </div>
       </div>
     </section>
-  );
+  )
 };
 
 export default Services;

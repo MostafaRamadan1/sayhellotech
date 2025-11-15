@@ -17,9 +17,9 @@ userReview:
 Our **DevOps & Cloud Solutions service** helps businesses automate workflows, optimize infrastructure, and scale
 efficiently. Focus on delivering value while we manage the technology stack.
 
-![Service images](/images/services/devops-1.png)
+[//]: # (![Service images]&#40;/images/services/devops-1.png&#41;)
 
-### What’s included
+### Service features
 
 - **Continuous integration & deployment** – Automate releases.
 - **Cloud architecture & migration** – Move securely and efficiently.
@@ -28,8 +28,8 @@ efficiently. Focus on delivering value while we manage the technology stack.
 - **Containerization & orchestration** – Kubernetes, Docker, and more.
 - **Security best practices** – Protect systems and data.
 
-![Service images](/images/services/devops-2.png)
-
+[//]: # (![Service images]&#40;/images/services/devops-2.png&#41;)
+&nbsp;
 ### Use cases
 
 - **Startups** – Rapid deployment of MVPs and features.
@@ -38,8 +38,9 @@ efficiently. Focus on delivering value while we manage the technology stack.
 - **SaaS products** – Continuous delivery and uptime.
 - **Internal tools** – Secure, maintainable cloud systems.
 
-![Service images](/images/services/devops-3.png)
+[//]: # (![Service images]&#40;/images/services/devops-3.png&#41;)
 
+&nbsp;
 ### Built-in performance and scalability
 
 - **Cloud-optimized workloads**
