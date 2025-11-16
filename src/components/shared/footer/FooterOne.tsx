@@ -35,7 +35,8 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                   Because Great Code Starts with a Hello
                 </p>
                 <div className="flex items-center gap-3">
-                  <Link target="_blank" href="https://www.linkedin.com/sayhellotech" className="footer-social-link">
+                  <Link target="_blank" href="https://www.linkedin.com/company/sayhellotech/"
+                        className="footer-social-link">
                     <span className="sr-only">LinkedIn</span>
                     <Image className="size-6" src={linkedin} alt="LinkedIn" />
                   </Link>
