@@ -22,8 +22,9 @@ export const navigationItems: NavigationItem[] = [
   {
     id: 'home',
     label: 'Home',
-    href: '/',
-    hasDropdown: false,
+    href: '#',
+    hasDropdown: true,
+    megaMenuComponent: 'HomeMegaMenu',
   },
   {
     id: 'about',

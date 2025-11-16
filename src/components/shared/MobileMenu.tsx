@@ -81,13 +81,13 @@ const MobileMenu = () => {
 
             <TestimonialMenu />
 
-            <TeamsMenu />
+            {/*<TeamsMenu />*/}
 
-            <PricingMenu />
+            {/*<PricingMenu />*/}
 
-            <LoginMenu />
+            {/*<LoginMenu />*/}
 
-            <SignUpMenu />
+            {/*<SignUpMenu />*/}
           </ul>
         </div>
       </div>

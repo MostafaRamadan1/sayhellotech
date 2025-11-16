@@ -38,15 +38,15 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                   Because Great Code Starts with a Hello
                 </p>
                 <div className="flex items-center gap-3">
-                  <Link target="_blank" href="https://www.linkedin.com" className="footer-social-link">
+                  <Link target="_blank" href="https://www.linkedin.com/sayhellotech" className="footer-social-link">
                     <span className="sr-only">LinkedIn</span>
                     <Image className="size-6" src={linkedin} alt="LinkedIn" />
                   </Link>
-                  <div className="bg-stroke-1/20 h-6 w-px"></div>
-                  <Link target="_blank" href="https://www.youtube.com" className="footer-social-link">
-                    <span className="sr-only">Youtube</span>
-                    <Image className="size-6" src={youtube} alt="Youtube" />
-                  </Link>
+                  {/*<div className="bg-stroke-1/20 h-6 w-px"></div>*/}
+                  {/*<Link target="_blank" href="https://www.youtube.com" className="footer-social-link">*/}
+                  {/*  <span className="sr-only">Youtube</span>*/}
+                  {/*  <Image className="size-6" src={youtube} alt="Youtube" />*/}
+                  {/*</Link>*/}
                 </div>
               </div>
             </RevealAnimation>
@@ -130,7 +130,7 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
           <FooterDivider />
           <RevealAnimation delay={0.7} offset={10} start="top 105%">
             <p className="text-tagline-1 text-primary-50 font-normal">
-              Copyright &copy;SayHelloTech – Because Great Code Starts with a Hello
+              Copyright &copy;SayHelloTech – Because Great Product Starts with a Hello
             </p>
           </RevealAnimation>
         </div>
