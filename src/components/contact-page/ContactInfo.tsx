@@ -254,23 +254,23 @@ const ContactInfo = () => {
                     />
                   </div>
                   {/* terms checkbox */}
-                  <fieldset className="flex items-center gap-2 mb-4">
-                    <label htmlFor="terms" className="flex items-center gap-x-3">
-                      <input id="terms" type="checkbox" className="sr-only peer" required={true} />
-                      <span
-                        className="size-4 rounded-full border border-stroke-3 dark:border-stroke-7 relative after:absolute after:size-2.5 after:bg-primary-500 after:rounded-full after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 peer-checked:after:opacity-100 peer-checked:border-primary-500 cursor-pointer" />
-                    </label>
-                    <label
-                      htmlFor="terms"
-                      className="text-tagline-3 cursor-pointer text-secondary/60 dark:text-accent/60">
-                      I agree with the
-                      <Link href="/terms-conditions" target={'_blank'}
-                            className="text-primary-500 underline text-tagline-3">
-                        {' '}
-                        terms and conditions
-                      </Link>
-                    </label>
-                  </fieldset>
+                  {/*<fieldset className="flex items-center gap-2 mb-4">*/}
+                  {/*  <label htmlFor="terms" className="flex items-center gap-x-3">*/}
+                  {/*    <input id="terms" type="checkbox" className="sr-only peer" required={true} />*/}
+                  {/*    <span*/}
+                  {/*      className="size-4 rounded-full border border-stroke-3 dark:border-stroke-7 relative after:absolute after:size-2.5 after:bg-primary-500 after:rounded-full after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 peer-checked:after:opacity-100 peer-checked:border-primary-500 cursor-pointer" />*/}
+                  {/*  </label>*/}
+                  {/*  <label*/}
+                  {/*    htmlFor="terms"*/}
+                  {/*    className="text-tagline-3 cursor-pointer text-secondary/60 dark:text-accent/60">*/}
+                  {/*    I agree with the*/}
+                  {/*    <Link href="/terms-conditions" target={'_blank'}*/}
+                  {/*          className="text-primary-500 underline text-tagline-3">*/}
+                  {/*      {' '}*/}
+                  {/*      terms and conditions*/}
+                  {/*    </Link>*/}
+                  {/*  </label>*/}
+                  {/*</fieldset>*/}
                   {/* submit button */}
                   <button
                     type="submit"
