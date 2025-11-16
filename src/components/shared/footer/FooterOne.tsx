@@ -1,9 +1,6 @@
 import RevealAnimation from '@/components/animation/RevealAnimation';
 import { cn } from '@/utils/cn';
-import facebook from '@public/images/icons/facebook.svg';
-import instagram from '@public/images/icons/instagram.svg';
 import linkedin from '@public/images/icons/linkedin.svg';
-import youtube from '@public/images/icons/youtube.svg';
 import darkLogo from '@public/images/shared/dark-logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -72,11 +69,6 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                         Career
                       </Link>
                     </li>
-                    <li>
-                      <Link href="/contact-us" className="footer-link">
-                        Contact Us
-                      </Link>
-                    </li>
                   </ul>
                 </div>
               </RevealAnimation>
@@ -105,16 +97,6 @@ const FooterOne = ({ className, defaultTheme }: FooterOneProps) => {
                 <div className="space-y-8">
                   <p className="sm:text-heading-6 text-tagline-1 text-primary-50 font-normal">Legal Policies</p>
                   <ul className="space-y-3 sm:space-y-5">
-                    <li>
-                      <Link href="/terms-conditions" className="footer-link">
-                        Terms & Conditions
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/privacy" className="footer-link">
-                        Privacy Policy
-                      </Link>
-                    </li>
                     <li>
                       <Link href="/gdpr" className="footer-link">
                         GDPR Compliance

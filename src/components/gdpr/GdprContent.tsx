@@ -37,23 +37,17 @@ const GdprContent = () => {
   ];
 
   // Updated items
-  const updatedItems: ListItem[] = [
-    { id: 'terms', text: 'Terms and conditions' },
-    { id: 'privacy', text: 'Privacy policy' },
-  ];
+  // const updatedItems: ListItem[] = [
+  //   { id: 'terms', text: 'Terms and conditions' },
+  //   { id: 'privacy', text: 'Privacy policy' },
+  // ];
 
   // Data collection items
   const dataCollectionItems: DataCollectionItem[] = [
     {
       id: 'account-info',
       label: 'Account Information:',
-      description: 'Your name, email address, phone number, and billing address during account registration.',
-    },
-    {
-      id: 'order-data',
-      label: 'Order Data: IP address:',
-      description:
-        'web browser information, payment email, billing address, payment method (e.g., PayPal or credit card details).',
+      description: 'Your name, email address, phone number when you contact us.',
     },
     {
       id: 'browsing-behavior',
@@ -65,19 +59,13 @@ const GdprContent = () => {
 
   // Data collection purposes
   const dataPurposes: ListItem[] = [
-    { id: 'account-management', text: 'To create and manage your NextSaaS account' },
-    { id: 'order-processing', text: 'To process orders, generate invoices, and prevent fraudulent transactions' },
+    { id: 'account-management', text: 'To create and manage your SayHelloTech account' },
     { id: 'personalization', text: 'To improve your experience on our site through personalized content' },
     { id: 'analytics', text: 'To analyze site traffic and optimize marketing efforts' },
   ];
 
   // Third-party services
   const thirdPartyServices: ThirdPartyService[] = [
-    {
-      id: 'woocommerce',
-      name: 'WooCommerce:',
-      description: 'For secure online transactions. registration.',
-    },
     {
       id: 'google-analytics',
       name: 'Google Analytics:',
@@ -99,7 +87,7 @@ const GdprContent = () => {
     { id: 'update-profile', text: 'You can update your profile details anytime from your account dashboard.' },
     {
       id: 'data-deletion',
-      text: 'To request a complete data deletion or data export, simply send an email to: support@nextsaas.com',
+      text: 'To request a complete data deletion or data export, simply send an email to: support@SayHelloTech.com',
     },
   ];
 
@@ -108,16 +96,25 @@ const GdprContent = () => {
       <div className="main-container">
         <div className="space-y-[70px]">
           {/* gdrp  */}
+          <div className="text-center space-y-3 mb-[70px] mt-[100px]">
+            <RevealAnimation delay={0.2}>
+              <span className="badge badge-green mb-5 ">Your data in safe hands</span>
+            </RevealAnimation>
+            <RevealAnimation delay={0.3}>
+              <h2>
+                SayHelloTech and the general data protection regulation <span className="text-primary-500">(GDPR)</span>
+              </h2>
+            </RevealAnimation>
+          </div>
           <RevealAnimation delay={0.3}>
             <div className="space-y-3">
-              <h2>NextSaaS and the general data protection regulation (GDPR)</h2>
               <p>
                 The General Data Protection Regulation (GDPR) is a privacy regulation enacted by the European Union (EU)
                 to strengthen the protection of individuals&apos; data. It became enforceable on May 25, 2018, and
                 applies to any company that handles the data of EU citizens, no matter where the company is based.
                 <br />
                 <br />
-                This page explains how NextSaaS implements GDPR principles and ensures that your data is handled
+                This page explains how SayHelloTech implements GDPR principles and ensures that your data is handled
                 transparently, securely, and respectfully.
               </p>
             </div>
@@ -128,7 +125,8 @@ const GdprContent = () => {
               <div className="space-y-3">
                 <h3 className="text-heading-4">Purpose of this document</h3>
                 <p>
-                  At NextSaaS, we are fully committed to respecting your privacy. This page provides a clear overview
+                  At SayHelloTech, we are fully committed to respecting your privacy. This page provides a clear
+                  overview
                   of:
                 </p>
               </div>
@@ -148,35 +146,37 @@ const GdprContent = () => {
               <h3 className="text-heading-4">What is GDPR?</h3>
               <p>
                 In simple terms, GDPR gives you greater control over your personal information. Service providers (like
-                NextSaaS) must be transparent about what data they collect, how they use it, and how they share it — and
+                SayHelloTech) must be transparent about what data they collect, how they use it, and how they share it —
+                and
                 users must have full rights to access, modify, or delete their data.
                 <br />
                 <br />
                 Although GDPR is an EU regulation, it affects any business that collects or processes the data of EU
-                residents, including NextSaaS.
+                residents, including SayHelloTech.
               </p>
             </div>
           </RevealAnimation>
-          {/* How NextSaaS Implements GDPR */}
+          {/* How SayHelloTech Implements GDPR */}
           <RevealAnimation delay={0.3}>
             <div className="space-y-3">
-              <h3 className="text-heading-4">How NextSaaS Implements GDPR</h3>
+              <h3 className="text-heading-4">How SayHelloTech Implements GDPR</h3>
               <p>
-                NextSaaS has always prioritized user data privacy, even before GDPR came into effect. Our core practices
+                SayHelloTech has always prioritized user data privacy, even before GDPR came into effect. Our core
+                practices
                 naturally align with GDPR principles, and we&apos;ve made further improvements to ensure full
                 compliance.
               </p>
-              <div className="space-y-3">
-                <h4 className="text-tagline-1 text-secondary dark:text-accent">We have updated our:</h4>
-                <ul className="space-y-1">
-                  {updatedItems.map((item) => (
-                    <li key={item.id} className="flex items-center justify-start gap-2">
-                      <span className="size-1.5 rounded-full inline-block bg-secondary dark:bg-accent" />
-                      <span className="text-tagline-1 text-secondary/60 dark:text-accent/60">{item.text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/*<div className="space-y-3">*/}
+              {/*  <h4 className="text-tagline-1 text-secondary dark:text-accent">We have updated our:</h4>*/}
+              {/*  <ul className="space-y-1">*/}
+              {/*    {updatedItems.map((item) => (*/}
+              {/*      <li key={item.id} className="flex items-center justify-start gap-2">*/}
+              {/*        <span className="size-1.5 rounded-full inline-block bg-secondary dark:bg-accent" />*/}
+              {/*        <span className="text-tagline-1 text-secondary/60 dark:text-accent/60">{item.text}</span>*/}
+              {/*      </li>*/}
+              {/*    ))}*/}
+              {/*  </ul>*/}
+              {/*</div>*/}
             </div>
           </RevealAnimation>
           {/* Data we collect */}
@@ -263,7 +263,7 @@ const GdprContent = () => {
                       {item.id === 'data-deletion' ? (
                         <>
                           To request a complete data deletion or data export, simply send an email to:{' '}
-                          <span className="text-secondary dark:text-accent">support@nextsaas.com</span>
+                          <span className="text-secondary dark:text-accent">support@SayHelloTech.com</span>
                         </>
                       ) : (
                         item.text

@@ -5,7 +5,7 @@ import FaqTabList from './FaqTabList';
 
 const FaqTab = () => {
   return (
-    <section className="py-[100px]">
+    <section className="pt-[200px] pb-[0px]  ">
       <div className="main-container">
         <div className="text-center space-y-5">
           <RevealAnimation delay={0.2}>

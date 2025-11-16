@@ -1,6 +1,5 @@
 import CareerDetailsBody from '@/components/career/CareerDetailsBody';
 import NavbarOne from '@/components/shared/header/NavbarOne';
-import PageHero from '@/components/shared/PageHero';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import getMarkDownData from '@/utils/getMarkDownData';
 import { Metadata } from 'next';
@@ -29,12 +28,7 @@ const CareerDetails = async ({ params }: { params: Promise<{ slug: string }> }) 
         btnClassName="btn-primary hover:btn-secondary dark:hover:btn-accent"
       />
       <main className="bg-background-3 dark:bg-background-7">
-        <PageHero
-          title="Careers"
-          heading="Apply Now"
-          link="/career"
-          className="bg-background-3 dark:bg-background-7"
-        />
+
         <CareerDetailsBody slug={slug} />
         {/*<CTAV1*/}
         {/*  className="dark:bg-background-5 bg-white"*/}
